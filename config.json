@@ -17,13 +17,9 @@
   "cache_file": {
     "enabled": true,
     "path": "/etc/sing-box/cache.db",
-    "store_fakeip": true
-    },
-    "fakeip": {
-  "enabled": true,
-  "fakeip_range": "198.18.0.1/16",
-  "fakeip_cache_size": 4096
-}
+    "store_fakeip": false
+    }
+   
   },
 
  "dns": 
