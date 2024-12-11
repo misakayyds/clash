@@ -17,7 +17,7 @@
   "cache_file": {
     "enabled": true,
     "path": "/etc/sing-box/cache.db",
-    "store_fakeip": false
+    "store_fakeip": true
     }
    
   },
@@ -41,6 +41,11 @@
      {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"}
      
    ],
+   "fakeip": {
+    "enabled": true,
+    "fakeip_range": "198.18.0.1/16",
+    "fakeip_cache_size": 4096
+  },
    "final": "dns_proxy",
    "strategy": "ipv4_only"
 },
