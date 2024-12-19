@@ -28,7 +28,7 @@
    [
      {"tag": "dns_block","address": "rcode://success"},
      {"tag": "dns_direct", "address": "https://120.53.53.53/dns-query", "detour": "Direct"},
-     {"tag": "dns_proxy", "address": "https://dns.google/dns-query", "address_strategy": "ipv4_only", "strategy": "ipv4_only","client_subnet": "1.0.1.0", "detour": "Proxy"}
+     {"tag": "dns_proxy", "address": "https://1.1.1.1/dns-query", "address_strategy": "ipv4_only", "strategy": "ipv4_only","client_subnet": "1.0.1.0", "detour": "Proxy"}
      
    ],
    "rules": 
