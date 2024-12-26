@@ -55,7 +55,7 @@
     "mtu": 9000,
     "auto_route": true,
     "auto_redirect": true,
-    "strict_route": true,
+    "strict_route": false,
     "sniff": true,
     "endpoint_independent_nat": false,
     "stack": "mixed",
@@ -137,8 +137,8 @@
    "final": "🐠 漏网之鱼",
    "rules": 
    [
-     {"protocol": "icmp","outbound": "Direct"},
-     {"protocol": "dns", "action": "hijack-dns"},
+     
+     
      {"clash_mode": "direct", "outbound": "Direct"},
      {"clash_mode": "global", "outbound": "GLOBAL"},
      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "Direct"},
