@@ -27,19 +27,14 @@
    "servers": 
    [
      
-     {"tag": "dns_direct", "address": "https://120.53.53.53/dns-query", "detour": "Direct"},
+  
      {"tag": "dns_proxy", "address": "https://1.1.1.1/dns-query", "address_strategy": "ipv4_only", "strategy": "ipv4_only","client_subnet": "1.0.1.0", "detour": "Proxy"}
      
    ],
    "rules": 
    [
      
-     {"outbound": "any", "server": "dns_direct"},
-     {"clash_mode": "Direct", "server": "dns_direct"},
-     {"clash_mode": "Global", "server": "dns_proxy"},
-     {"rule_set": "geosite-cn", "action": "route","server": "dns_direct"},
-     {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"}
-     
+ 
    ],
    "final": "dns_proxy",
    "disable_cache": false,
@@ -70,7 +65,7 @@
   {
     "type": "mixed",
     "listen": "127.0.0.1",
-    "listen_port": 2090,
+    "listen_port": 5353,
     "sniff": true,
     "users": []
   }
