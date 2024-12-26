@@ -138,7 +138,7 @@
    "rules": 
    [
      
-     
+     {"protocol": "dns", "action": "hijack-dns"},
      {"clash_mode": "direct", "outbound": "Direct"},
      {"clash_mode": "global", "outbound": "GLOBAL"},
      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "Direct"},
