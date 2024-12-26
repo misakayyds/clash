@@ -27,14 +27,19 @@
    "servers": 
    [
      
-  
+     {"tag": "dns_direct", "address": "https://120.53.53.53/dns-query", "detour": "Direct"},
      {"tag": "dns_proxy", "address": "https://1.1.1.1/dns-query", "address_strategy": "ipv4_only", "strategy": "ipv4_only","client_subnet": "1.0.1.0", "detour": "Proxy"}
      
    ],
    "rules": 
    [
+     {"rule_set": "geosite-dnsblock","action": "reject"},
+     {"outbound": "any", "server": "dns_direct"},
+     {"clash_mode": "Direct", "server": "dns_direct"},
+     {"clash_mode": "Global", "server": "dns_proxy"},
+     {"rule_set": "geosite-cn", "action": "route","server": "dns_direct"},
+     {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"}
      
- 
    ],
    "final": "dns_proxy",
    "disable_cache": false,
@@ -65,7 +70,7 @@
   {
     "type": "mixed",
     "listen": "127.0.0.1",
-    "listen_port": 5353,
+    "listen_port": 2090,
     "sniff": true,
     "users": []
   }
@@ -153,7 +158,7 @@
    ],
     
     "rule_set": [
-      
+      {"type": "remote","tag": "geosite-dnsblock","format": "binary","url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main//Filters/AWAvenue-Ads-Rule-Singbox.srs", "download_detour": "Proxy"},
       { "tag": "geosite-chat", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-chat-!cn.srs", "download_detour": "Proxy" },
       { "tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs", "download_detour": "Proxy" },
       { "tag": "geosite-google", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs", "download_detour": "Proxy" },
